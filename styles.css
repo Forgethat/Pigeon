@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans&family=Lato&family=M+PLUS+1&family=Merriweather&family=Montserrat:wght@400;500&family=Mulish:wght@400;600&family=Open+Sans&family=Questrial&family=Roboto&family=Rubik&family=Space+Mono&family=Text+Me+One&family=Tinos&family=Work+Sans&display=swap');
+
+        :root {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Text Me One', sans-serif;
+            background-image: url(images/63525_d32dc9ca73f70d1ad310f33de5f16691-11_17_2022_8_32_16_PM.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        header {
+            padding: .5rem;
+        }
+
+        nav {
+            padding: .5rem;
+            color: white;
+        }
+
+        /* Mobile nav bar */
+        header nav .fa-bars {
+            display: block;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        nav ul,
+        nav li {
+            display: none;
+        }
+
+        /* Main container and glassmorphism effect */
+        .pigeon-menu {
+            padding: 2em;
+            min-height: 10em;
+            z-index: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pigeon-menu::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+            overflow: hidden;
+            filter: blur(5px);
+        }
+
+        /* Image container class and image class. */
+        .pigeon-images {
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+            gap: 1em;
+            align-self: center;
+            justify-self: center;
+            height: 100%;
+        }
+
+        .pigeon-img {
+            width: 100%;
+            height: 100%;
+            max-width: 200px;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+
+        /* main title, buttons, sign-in */
+        .pigeon-body h1 {
+            font-size: 2rem;
+            margin: .5em 0em;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .button-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button-wrapper button {
+            font-size: 1.5rem;
+            background: none;
+            border: 3px solid white;
+            color: white;
+            text-align: start;
+            cursor: pointer;
+            transition: .2s;
+            width: 100%;
+        }
+
+        .button-effect {
+            width: 100%;
+            transition: ease-in-out;
+        }
+
+        .button-effect:hover button {
+            width: 80%;
+        }
+
+        a {
+            display: block;
+        }
+
+        .button-wrapper button a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .pigeon-footer {
+            padding: 1.1em 0em;
+            color: white;
+        }
+
+        .pigeon-footer h2 {
+            margin: 0;
+        }
+
+        .pigeon-footer h2:nth-child(2) {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* main container */
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* media queries */
+        @media screen and (min-width: 768px) {
+            header nav .fa-bars {
+                display: none;
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: flex-start;
+                gap: 3.0em;
+                list-style: none;
+            }
+
+            nav ul a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            nav ul li:nth-child(4) {
+                align-self: flex-end;
+                margin-left: auto;
+            }
+
+            nav li {
+                display: flex;
+                font-size: 1.5rem;
+                position: relative;
+            }
+
+            nav li::after {
+                content: '';
+                width: 1px;
+                height: 1px;
+                background: white;
+                bottom: 0;
+                left: 50%;
+                position: absolute;
+                transition: ease-in-out .6s;
+            }
+
+            nav li:hover::after {
+                width: 100%;
+                left: 0;
+            }
+
+            .pigeon-menu {
+                display: flex;
+            }
+
+            .pigeon-images {
+                align-self: center;
+                justify-self: center;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .pigeon-body {
+                margin: 0 auto;
+            }
+
+            .pigeon-footer {
+                padding-bottom: 0;
+            }
+
+            .container {
+                width: 90%;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            .pigeon-img {
+                width: 600px;
+            }
+        }
